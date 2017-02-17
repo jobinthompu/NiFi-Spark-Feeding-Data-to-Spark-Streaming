@@ -135,36 +135,24 @@ http://your-vm-ip:9090/nifi/
 
 ## Building Spark application 
 
-1) To begin with, lets clone the git repo, feel free to inspect the dependencies and NiFiStormStreaming.java 
+1) To begin with, lets clone the git repo below:
 
 ```
 # cd /opt/
-# git https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming.git
+# git clone https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming.git
 ```
 
-2) Feel free the inspect pom.xml to verify the dependencies.
+2) Feel free the inspect Spark application code:
 
 ```
-# cd /opt/NiFi-Storm-Integration
-# vi pom.xml
-```
-3) Lets rebuild Storm jar with artifacts (this might take several minutes).
+# vi /opt/NiFi-Spark-Feeding-Data-to-Spark-Streaming/src/main/Spark+NiFi+Phoenix.sh
 
 ```
-# mvn package
-```
 
-4) Once the build is SUCCESSFUL, make sure the NiFiStormTopology-Uber.jar is generated in the target folder:
+3) Now let us go ahead and submit the Spark Application via spark-shell
 
 ```
-# ls -l /opt/NiFi-Storm-Integration/target/NiFiStormTopology-Uber.jar
-```
-
-5) Now let us go ahead and submit the topology in storm (make sure the NiFi flow created above is running before submitting topology).
-
-```
-# cd /opt/NiFi-Storm-Integration
-# storm jar target/NiFiStormTopology-Uber.jar NiFi.NiFiStormStreaming &
+# spark-shell -i /opt/NiFi-Spark-Feeding-Data-to-Spark-Streaming/src/main/Spark+NiFi+Phoenix.sh
 ```
 
 6) Lets Go ahead and verify the topology is submitted on the Storm View in Ambari as well as Storm UI:
