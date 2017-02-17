@@ -37,6 +37,8 @@ For Spark, we will use this same mechanism - we will use the Site-to-Site protoc
 
 3) Hbase is Installed with phoeix Query Server.
 
+4) Download Compatible version [in our case 0.4.1] of "nifi-spark-receiver" and "nifi-site-to-site-client" to Sandbox in a specific location:
+
 ## Configuring and Creating Table in Hbase via Phoenix
 
 1) Make sure Hbase components as well as phoenix query server is started.
