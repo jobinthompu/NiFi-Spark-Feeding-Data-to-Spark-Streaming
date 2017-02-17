@@ -46,6 +46,11 @@ For Spark, we will use this same mechanism - we will use the Site-to-Site protoc
 # wget http://central.maven.org/maven2/org/apache/nifi/nifi-site-to-site-client/1.1.0/nifi-site-to-site-client-1.1.0.jar
 ```
 
+5) Make sure Git is installed on the VM:
+```
+# yum install git -y
+```
+
 ## Configuring and Creating Table in Hbase via Phoenix
 
 1) Make sure Hbase components as well as phoenix query server is started.
@@ -128,13 +133,13 @@ http://your-vm-ip:9090/nifi/
 6) Start the flow on NiFi and notice data is stuck in the connection before the output port "spark"
 
 
-## Building Storm application jar with maven
+## Building Spark application 
 
-1) To begin with, lets clone the artifacts, feel free to inspect the dependencies and NiFiStormStreaming.java 
+1) To begin with, lets clone the git repo, feel free to inspect the dependencies and NiFiStormStreaming.java 
 
 ```
 # cd /opt/
-# git clone https://github.com/jobinthompu/NiFi-Storm-Integration.git
+# git https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming.git
 ```
 
 2) Feel free the inspect pom.xml to verify the dependencies.
