@@ -1,5 +1,5 @@
 
-# NiFi Site-to-Site Direct Streaming to Storm for Log Ingestion
+# NiFi Site-to-Site Direct Streaming to Spark for Log Ingestion
 
 ## Index
 
@@ -15,12 +15,12 @@
 
 ## Short Description
 
-Sample Application for Log Ingestion with NiFi and Storm into Phoenix using NiFi Site-to-Site on HW Sandbox.
+Sample Application for Log Ingestion with NiFi and Spark into Phoenix using NiFi Site-to-Site on HW Sandbox.
 
 ## Introduction
 
 Using NiFi, data can be exposed in such a way that a receiver can pull from it by adding an Output Port to the root process group. 
-For Storm, we will use this same mechanism - we will use the Site-to-Site protocol to pull data from NiFi's Output Ports. In this tutorial we learn to capture NiFi app log from the Sandbox and parse it using Java regex and ingest it to Phoenix via Storm or Directly using NiFi PutSql Processor.
+For Spark, we will use this same mechanism - we will use the Site-to-Site protocol to pull data from NiFi's Output Ports. In this tutorial we learn to capture NiFi app log from the Sandbox and parse it using Java regex and ingest it to Phoenix via Spark or Directly using NiFi PutSql Processor.
 
 ## Prerequisites
 
@@ -31,17 +31,10 @@ For Storm, we will use this same mechanism - we will use the Site-to-Site protoc
 # wget http://public-repo-1.hortonworks.com.s3.amazonaws.com/HDF/centos6/2.x/updates/2.0.1.0/HDF-2.0.1.0-centos6-tars-tarball.tar.gz
 # tar -xvf HDF-2.0.1.0-12.tar.gz
 ```
-2) Storm, Zeppelin are Installed on your VM and started.
+2) Spark, Zeppelin are Installed on your VM and started.
 
 3) Hbase is Installed with phoeix Query Server.
 
-4) Make sure Maven is installed, if not already, execute below steps:
-
-```
-# curl -o /etc/yum.repos.d/epel-apache-maven.repo https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
-# yum -y install apache-maven
-# mvn -version
-```	
 ## Configuring and Creating Table in Hbase via Phoenix
 
 1) Make sure Hbase components as well as phoenix query server is started.
@@ -60,9 +53,7 @@ For Storm, we will use this same mechanism - we will use the Site-to-Site protoc
 4) Execute below in the Phoenix shell to create tables in Hbase:
 
 ```
-CREATE TABLE NIFI_LOG( UUID VARCHAR NOT NULL, EVENT_DATE DATE, BULLETIN_LEVEL VARCHAR, EVENT_TYPE VARCHAR, CONTENT VARCHAR CONSTRAINT pk PRIMARY KEY(UUID));
-CREATE TABLE NIFI_DIRECT( UUID VARCHAR NOT NULL, EVENT_DATE VARCHAR, BULLETIN_LEVEL VARCHAR, EVENT_TYPE VARCHAR, CONTENT VARCHAR CONSTRAINT pk PRIMARY KEY(UUID));
-
+CREATE TABLE NIFI_SPARK( UUID VARCHAR NOT NULL, EVENT_DATE VARCHAR, BULLETIN_LEVEL VARCHAR, EVENT_TYPE VARCHAR, CONTENT VARCHAR CONSTRAINT pk PRIMARY KEY(UUID));
 ```
 	
 ## Configuring and Starting NiFi
