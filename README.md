@@ -1,4 +1,6 @@
 
+# WORK IN PROGRESS
+
 # NiFi Site-to-Site Direct Streaming to Spark for Log Ingestion
 
 ## Index
