@@ -261,7 +261,7 @@ SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_DIRECT WHERE BULLETIN_LEVE
 ### References:
 
 * [ Mark Payne's - NiFi-Spark](https://blogs.apache.org/nifi/entry/stream_processing_nifi_and_spark)
-* [ My HCC Article](https://community.hortonworks.com/content/kbentry/79597/nifi-site-to-site-direct-streaming-to-storm.html)
+* [ My HCC Article](https://community.hortonworks.com/articles/12708/nifi-feeding-data-to-spark-streaming.html)
 
 Thanks,
 
