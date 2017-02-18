@@ -167,7 +167,7 @@ http://your-vm-ip:9090/nifi/
 ```
 # spark-shell --master yarn --deploy-mode client -i /opt/NiFi-Spark-Feeding-Data-to-Spark-Streaming/src/main/Spark+NiFi+Phoenix.sh
 ```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/Spark-Shell.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Spark-Shell.jpg)
 
 4) Make sure the application is submitted and it prints out statistics. 
 
@@ -176,7 +176,7 @@ http://your-vm-ip:9090/nifi/
 ```
 YARN UI: http://your-vm-ip:8088
 ```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/YARN-UI.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/YARN-UI.jpg)
 
 6) Lets Go back to the NiFi Web UI, if everything worked fine, the data which was pending on the port 'spark' will be gone as it was consumed by Spark.
 
@@ -190,7 +190,7 @@ YARN UI: http://your-vm-ip:8088
 SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_SPARK WHERE BULLETIN_LEVEL='INFO' ORDER BY EVENT_DATE LIMIT 20;
 ```
 
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/sqlline.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/sqlline.jpg)
 
  - via Zeppelin for better visualization 
  
