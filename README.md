@@ -34,7 +34,7 @@ For Spark, we will use this same mechanism - we will use the Site-to-Site protoc
 # wget http://public-repo-1.hortonworks.com/HDF/2.1.1.0/nifi-1.1.0.2.1.1.0-2-bin.tar.gz
 # tar -xvf nifi-1.1.0.2.1.1.0-2-bin.tar.gz
 ```
-2) Spark, Zeppelin are Installed on your VM and started.
+2) Spark, Zeppelin, YARN and HDFS are Installed on your VM and started.
 
 3) Hbase is Installed with phoeix Query Server.
 
@@ -73,6 +73,19 @@ CREATE TABLE NIFI_SPARK( UUID VARCHAR NOT NULL, EVENT_DATE VARCHAR, BULLETIN_LEV
 CREATE TABLE NIFI_SPARK_DIRECT( UUID VARCHAR NOT NULL, EVENT_DATE VARCHAR, BULLETIN_LEVEL VARCHAR, EVENT_TYPE VARCHAR, CONTENT VARCHAR CONSTRAINT pk PRIMARY KEY(UUID));
 
 ```
+
+## Configuring and Restarting Spark
+
+1) Login to Ambari UI and Navigate to Services --> Spark --> Configs --> Custom spark-defaults and add 2 below properties with given values:
+
+```
+spark.driver.extraClassPath			/opt/HDF-2.1.1/nifi-1.1.0.2.1.1.0-2/lib/nifi-framework-api-1.1.0.2.1.1.0-2.jar:/opt/spark-receiver/nifi-site-to-site-client-1.1.0.jar:/opt/spark-receiver/nifi-spark-receiver-1.1.0.jar:/opt/HDF-2.1.1/nifi-1.1.0.2.1.1.0-2/lib/nifi-api-1.1.0.2.1.1.0-2.jar:/opt/HDF-2.1.1/nifi-1.1.0.2.1.1.0-2/lib/bootstrap/nifi-utils-1.1.0.2.1.1.0-2.jar:/opt/HDF-2.1.1/nifi-1.1.0.2.1.1.0-2/work/nar/framework/nifi-framework-nar-1.1.0.2.1.1.0-2.nar-unpacked/META-INF/bundled-dependencies/nifi-client-dto-1.1.0.2.1.1.0-2.jar:/opt/HDF-2.1.1/nifi-1.1.0.2.1.1.0-2/work/nar/framework/nifi-framework-nar-1.1.0.2.1.1.0-2.nar-unpacked/META-INF/bundled-dependencies/httpcore-nio-4.4.5.jar:/usr/hdp/current/phoenix-client/phoenix-client.jar
+spark.driver.allowMultipleContexts = true
+```
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Spark-Config.jpg)
+
+2) Once properties are add, restart Spark.
+
 	
 ## Configuring and Starting NiFi
 
@@ -152,31 +165,29 @@ http://your-vm-ip:9090/nifi/
 3) Now let us go ahead and submit the Spark Application via spark-shell
 
 ```
-# spark-shell -i /opt/NiFi-Spark-Feeding-Data-to-Spark-Streaming/src/main/Spark+NiFi+Phoenix.sh
+# spark-shell --master yarn --deploy-mode client -i /opt/NiFi-Spark-Feeding-Data-to-Spark-Streaming/src/main/Spark+NiFi+Phoenix.sh
 ```
+![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/Spark-Shell.jpg)
 
-6) Lets Go ahead and verify the topology is submitted on the Storm View in Ambari as well as Storm UI:
+4) Make sure the application is submitted and it prints out statistics. 
 
-```
-Ambari UI: http://your-vm-ip:8080
-```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/StormView.jpg)
+5) Lets Go ahead and verify that the Application is submitted and started in YARN (you can drill down and see the Application-Master spark UI as well): 
 
 ```
-Storm UI: http://your-vm-ip:8744/index.html
+YARN UI: http://your-vm-ip:8088
 ```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/StormUI.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/YARN-UI.jpg)
 
-7) Lets Go back to the NiFi Web UI, if everything worked fine, the data which was pending on the port OUT will be gone as it was consumed by Storm.
+6) Lets Go back to the NiFi Web UI, if everything worked fine, the data which was pending on the port 'spark' will be gone as it was consumed by Spark.
 
-8) Now Lets Connect to Phoenix and check out the data populated in tables, you can either use Phoenix sqlline command line or Zeppelin 
+7) Now Lets Connect to Phoenix and check out the data populated in tables, you can either use Phoenix sqlline command line or Zeppelin 
 
  - via phoenix sqlline
  
 ```
 # /usr/hdp/current/phoenix-client/bin/sqlline.py localhost:2181:/hbase-unsecure 
 
-SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_DIRECT WHERE BULLETIN_LEVEL='ERROR' ORDER BY EVENT_DATE
+SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_SPARK WHERE BULLETIN_LEVEL='INFO' ORDER BY EVENT_DATE LIMIT 20;
 ```
 
 ![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/sqlline.jpg)
