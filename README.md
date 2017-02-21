@@ -234,7 +234,7 @@ Database Driver Location(s) : /usr/hdp/current/phoenix-client/phoenix-client.jar
 ```
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Phoenix-Spark.jpg)
 
-6) Drop a ConvertJSONToSQL to canvas with below configuration, connect AttributesToJSON's success relation to it, auto terminate Failure relation for now after connecting to Phoenix-Storm DB Controller service.
+6) Drop a ConvertJSONToSQL to canvas with below configuration, connect AttributesToJSON's success relation to it, auto terminate Failure relation for now after connecting to Phoenix-Spark DB Controller service.
 
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/ConvertJSONToSQL.jpg)
 
@@ -246,11 +246,11 @@ Database Driver Location(s) : /usr/hdp/current/phoenix-client/phoenix-client.jar
 
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/PutSQL.jpg)
 
-9) The final flow including both ingestion via Storm and direct to phoenix using PutSql is complete, it should look similar to below:
+9) The final flow including both ingestion via Spark and direct to phoenix using PutSql is complete, it should look similar to below:
 
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Final_Flow.jpg)
 
-10) Now go ahead and start the flow to ingest data to both Tables via storm and directly from NiFi.
+10) Now go ahead and start the flow to ingest data to both Tables via Spark and directly from NiFi.
 
 11) Login back to Zeppelin to see if data is populated in the NIFI_DIRECT table.
 ```
