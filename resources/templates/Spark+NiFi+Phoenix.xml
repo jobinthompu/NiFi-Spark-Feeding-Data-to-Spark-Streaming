@@ -1,16 +1,16 @@
 <?xml version="1.0" ?>
 <template encoding-version="1.0">
-  <description>Integrating NiFi with Storm and Phoenix</description>
-  <groupId>99e15bee-0159-1000-2913-a236bf43fa16</groupId>
-  <name>Storm+NiFi+Phoenix</name>
+  <description>Spark+NiFi+Phoenix</description>
+  <groupId>e3ffc297-0159-1000-10ed-bbaab5378979</groupId>
+  <name>Spark+NiFi+Phoenix</name>
   <snippet>
     <connections>
       <id>9d72da1f-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
       <backPressureObjectThreshold>10000</backPressureObjectThreshold>
       <destination>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>9d72a395-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </destination>
@@ -19,7 +19,7 @@
       <name></name>
       <selectedRelationships>success</selectedRelationships>
       <source>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>9d6db51c-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </source>
@@ -27,11 +27,11 @@
     </connections>
     <connections>
       <id>9d7436a9-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
       <backPressureObjectThreshold>10000</backPressureObjectThreshold>
       <destination>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>9d7411cf-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </destination>
@@ -40,7 +40,7 @@
       <name></name>
       <selectedRelationships>sql</selectedRelationships>
       <source>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>9d72a395-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </source>
@@ -48,11 +48,11 @@
     </connections>
     <connections>
       <id>aa0b5fc4-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
       <backPressureObjectThreshold>10000</backPressureObjectThreshold>
       <destination>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>aa0b33be-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </destination>
@@ -61,7 +61,7 @@
       <name></name>
       <selectedRelationships>matched</selectedRelationships>
       <source>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>0639d4ca-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </source>
@@ -69,11 +69,11 @@
     </connections>
     <connections>
       <id>aa0cdac7-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
       <backPressureObjectThreshold>10000</backPressureObjectThreshold>
       <destination>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>9d6db51c-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </destination>
@@ -85,7 +85,7 @@
       <selectedRelationships>INFO</selectedRelationships>
       <selectedRelationships>WARN</selectedRelationships>
       <source>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>aa0b33be-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </source>
@@ -93,11 +93,11 @@
     </connections>
     <connections>
       <id>01591018-a97c-1639-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
       <backPressureObjectThreshold>10000</backPressureObjectThreshold>
       <destination>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>9d74a099-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </destination>
@@ -106,7 +106,7 @@
       <name></name>
       <selectedRelationships>success</selectedRelationships>
       <source>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>9d7411cf-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </source>
@@ -114,11 +114,11 @@
     </connections>
     <connections>
       <id>063a95c3-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
       <backPressureObjectThreshold>10000</backPressureObjectThreshold>
       <destination>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>0639e687-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </destination>
@@ -127,7 +127,7 @@
       <name></name>
       <selectedRelationships>success</selectedRelationships>
       <source>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>0639a97c-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </source>
@@ -135,11 +135,11 @@
     </connections>
     <connections>
       <id>063ad232-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
       <backPressureObjectThreshold>10000</backPressureObjectThreshold>
       <destination>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>0639d4ca-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </destination>
@@ -148,7 +148,7 @@
       <name></name>
       <selectedRelationships>splits</selectedRelationships>
       <source>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>0639e687-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </source>
@@ -156,11 +156,11 @@
     </connections>
     <connections>
       <id>0672bb51-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
       <backPressureObjectThreshold>10000</backPressureObjectThreshold>
       <destination>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>067289fd-0159-1000-0000-000000000000</id>
         <type>OUTPUT_PORT</type>
       </destination>
@@ -169,7 +169,7 @@
       <name></name>
       <selectedRelationships>matched</selectedRelationships>
       <source>
-        <groupId>99e15bee-0159-1000-0000-000000000000</groupId>
+        <groupId>e3ffc297-0159-1000-0000-000000000000</groupId>
         <id>0639d4ca-0159-1000-0000-000000000000</id>
         <type>PROCESSOR</type>
       </source>
@@ -177,7 +177,7 @@
     </connections>
     <controllerServices>
       <id>9d62145c-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <comments></comments>
       <descriptors>
         <entry>
@@ -222,6 +222,12 @@
             <name>Max Total Connections</name>
           </value>
         </entry>
+        <entry>
+          <key>Validation-query</key>
+          <value>
+            <name>Validation-query</name>
+          </value>
+        </entry>
       </descriptors>
       <name>Phoenix-Storm</name>
       <properties>
@@ -251,27 +257,30 @@
           <key>Max Total Connections</key>
           <value>8</value>
         </entry>
+        <entry>
+          <key>Validation-query</key>
+        </entry>
       </properties>
       <state>ENABLED</state>
       <type>org.apache.nifi.dbcp.DBCPConnectionPool</type>
     </controllerServices>
     <outputPorts>
       <id>067289fd-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
         <x>1201.898411339962</x>
         <y>249.76533205634883</y>
       </position>
       <comments></comments>
       <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
-      <name>OUT</name>
+      <name>spark</name>
       <state>STOPPED</state>
       <transmitting>false</transmitting>
       <type>OUTPUT_PORT</type>
     </outputPorts>
     <processors>
       <id>9d6db51c-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
         <x>592.194358659302</x>
         <y>209.96910465136034</y>
@@ -306,6 +315,7 @@
             </value>
           </entry>
         </descriptors>
+        <executionNode>ALL</executionNode>
         <lossTolerant>false</lossTolerant>
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
@@ -345,10 +355,10 @@
     </processors>
     <processors>
       <id>9d72a395-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
-        <x>16.912926271229253</x>
-        <y>415.1407301261379</y>
+        <x>1.0508657243544803</x>
+        <y>420.9086744620754</y>
       </position>
       <config>
         <bulletinLevel>WARN</bulletinLevel>
@@ -410,7 +420,14 @@
               <name>Update Keys</name>
             </value>
           </entry>
+          <entry>
+            <key>jts-quoted-identifiers</key>
+            <value>
+              <name>jts-quoted-identifiers</name>
+            </value>
+          </entry>
         </descriptors>
+        <executionNode>ALL</executionNode>
         <lossTolerant>false</lossTolerant>
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
@@ -447,6 +464,10 @@
           <entry>
             <key>Update Keys</key>
           </entry>
+          <entry>
+            <key>jts-quoted-identifiers</key>
+            <value>false</value>
+          </entry>
         </properties>
         <runDurationMillis>0</runDurationMillis>
         <schedulingPeriod>0 sec</schedulingPeriod>
@@ -471,7 +492,7 @@
     </processors>
     <processors>
       <id>9d7411cf-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
         <x>598.9129344251924</x>
         <y>418.40405849316653</y>
@@ -518,6 +539,7 @@
             </value>
           </entry>
         </descriptors>
+        <executionNode>ALL</executionNode>
         <lossTolerant>false</lossTolerant>
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
@@ -565,7 +587,7 @@
     </processors>
     <processors>
       <id>9d74a099-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
         <x>1165.27660141647</x>
         <y>408.488428937701</y>
@@ -607,6 +629,7 @@
             </value>
           </entry>
         </descriptors>
+        <executionNode>ALL</executionNode>
         <lossTolerant>false</lossTolerant>
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
@@ -653,7 +676,7 @@
     </processors>
     <processors>
       <id>aa0b33be-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
         <x>0.0</x>
         <y>206.95123481750488</y>
@@ -694,6 +717,7 @@
             </value>
           </entry>
         </descriptors>
+        <executionNode>ALL</executionNode>
         <lossTolerant>false</lossTolerant>
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
@@ -749,7 +773,7 @@
     </processors>
     <processors>
       <id>0639a97c-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
         <x>0.39996337890625</x>
         <y>6.351203918457031</y>
@@ -760,6 +784,12 @@
         <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
         <descriptors>
           <entry>
+            <key>tail-mode</key>
+            <value>
+              <name>tail-mode</name>
+            </value>
+          </entry>
+          <entry>
             <key>File to Tail</key>
             <value>
               <name>File to Tail</name>
@@ -769,6 +799,12 @@
             <key>Rolling Filename Pattern</key>
             <value>
               <name>Rolling Filename Pattern</name>
+            </value>
+          </entry>
+          <entry>
+            <key>tail-base-directory</key>
+            <value>
+              <name>tail-base-directory</name>
             </value>
           </entry>
           <entry>
@@ -783,16 +819,48 @@
               <name>File Location</name>
             </value>
           </entry>
+          <entry>
+            <key>tailfile-recursive-lookup</key>
+            <value>
+              <name>tailfile-recursive-lookup</name>
+            </value>
+          </entry>
+          <entry>
+            <key>tailfile-rolling-strategy</key>
+            <value>
+              <name>tailfile-rolling-strategy</name>
+            </value>
+          </entry>
+          <entry>
+            <key>tailfile-lookup-frequency</key>
+            <value>
+              <name>tailfile-lookup-frequency</name>
+            </value>
+          </entry>
+          <entry>
+            <key>tailfile-maximum-age</key>
+            <value>
+              <name>tailfile-maximum-age</name>
+            </value>
+          </entry>
         </descriptors>
+        <executionNode>ALL</executionNode>
         <lossTolerant>false</lossTolerant>
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
           <entry>
+            <key>tail-mode</key>
+            <value>Single file</value>
+          </entry>
+          <entry>
             <key>File to Tail</key>
-            <value>/opt/HDF-2.0.1.0/nifi/logs/nifi-app.log</value>
+            <value>/opt/HDF-2.1.1/nifi-1.1.0.2.1.1.0-2/logs/nifi-app.log</value>
           </entry>
           <entry>
             <key>Rolling Filename Pattern</key>
+          </entry>
+          <entry>
+            <key>tail-base-directory</key>
           </entry>
           <entry>
             <key>Initial Start Position</key>
@@ -801,6 +869,22 @@
           <entry>
             <key>File Location</key>
             <value>Remote</value>
+          </entry>
+          <entry>
+            <key>tailfile-recursive-lookup</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>tailfile-rolling-strategy</key>
+            <value>Fixed name</value>
+          </entry>
+          <entry>
+            <key>tailfile-lookup-frequency</key>
+            <value>10 minutes</value>
+          </entry>
+          <entry>
+            <key>tailfile-maximum-age</key>
+            <value>24 hours</value>
           </entry>
         </properties>
         <runDurationMillis>0</runDurationMillis>
@@ -818,7 +902,7 @@
     </processors>
     <processors>
       <id>0639d4ca-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
         <x>1149.3999938964844</x>
         <y>0.0</y>
@@ -907,6 +991,12 @@
             </value>
           </entry>
           <entry>
+            <key>extract-text-enable-repeating-capture-group</key>
+            <value>
+              <name>extract-text-enable-repeating-capture-group</name>
+            </value>
+          </entry>
+          <entry>
             <key>BULLETIN_LEVEL</key>
             <value>
               <name>BULLETIN_LEVEL</name>
@@ -931,6 +1021,7 @@
             </value>
           </entry>
         </descriptors>
+        <executionNode>ALL</executionNode>
         <lossTolerant>false</lossTolerant>
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
@@ -987,6 +1078,10 @@
             <value>true</value>
           </entry>
           <entry>
+            <key>extract-text-enable-repeating-capture-group</key>
+            <value>false</value>
+          </entry>
+          <entry>
             <key>BULLETIN_LEVEL</key>
             <value>([A-Z]{4,5})</value>
           </entry>
@@ -1022,7 +1117,7 @@
     </processors>
     <processors>
       <id>0639e687-0159-1000-0000-000000000000</id>
-      <parentGroupId>99e15bee-0159-1000-0000-000000000000</parentGroupId>
+      <parentGroupId>e3ffc297-0159-1000-0000-000000000000</parentGroupId>
       <position>
         <x>586.5373229980469</x>
         <y>4.136201858520508</y>
@@ -1063,6 +1158,7 @@
             </value>
           </entry>
         </descriptors>
+        <executionNode>ALL</executionNode>
         <lossTolerant>false</lossTolerant>
         <penaltyDuration>30 sec</penaltyDuration>
         <properties>
@@ -1107,5 +1203,5 @@
       <type>org.apache.nifi.processors.standard.SplitText</type>
     </processors>
   </snippet>
-  <timestamp>01/17/2017 02:31:14 UTC</timestamp>
+  <timestamp>01/29/2017 01:37:47 UTC</timestamp>
 </template>
