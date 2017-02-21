@@ -209,8 +209,6 @@ Zeppelin UI: http://your-vm-ip:9995/
 ```
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Zeppelin.jpg)
 
-9) No you can Change the code as needed, re-built the jar and re-submit the topologies.
-
 
 ## Extending NiFi Flow to ingest data directly to Phoenix using PutSql processor
 
