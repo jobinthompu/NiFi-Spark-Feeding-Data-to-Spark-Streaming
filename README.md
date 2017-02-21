@@ -1,6 +1,3 @@
-
-# WORK IN PROGRESS
-
 # NiFi Site-to-Site Direct Streaming to Spark for Log Ingestion
 
 ## Index
@@ -279,7 +276,7 @@ SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_DIRECT WHERE BULLETIN_LEVE
 * Installed and Configured HDF 2.0 on your HDP-2.5 Sandbox.
 * Created a Data flow to pull logs and then to Parse it and make it available on a Site-to-site enabled NiFi port.
 * Created a Spark Application to consume data from NiFi via Site-to-Site and Ingest it to Hbase via Phoenix.
-* (Directly Ingested Data to Phoenix with PutSQL Processor in NiFi with out using Spark)
+* Directly Ingested Data to Phoenix with PutSQL Processor in NiFi with out using Spark.
 * Viewed the Ingested data from Phoenix command line and Zeppelin
 
 
