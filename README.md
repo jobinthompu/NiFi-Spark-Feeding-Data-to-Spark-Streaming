@@ -11,7 +11,7 @@
 * [Configuring and Creating Table in Hbase via Phoenix](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#configuring-and-creating-table-in-hbase-via-phoenix)
 * [Configuring and Restarting Spark](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#configuring-and-restarting-spark)
 * [Configuring and Starting NiFi](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#configuring-and-starting-nifi)
-* [Building a Flow in NiFi to fetch and parse nifi-app.log](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming##building-a-flow-in-nifi-to-fetch-and-parse-nifi-applog)
+* [Building a Flow in NiFi to fetch and parse nifi-app.log](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#building-a-flow-in-nifi-to-fetch-and-parse-nifi-applog)
 * [Building Spark application](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#building-spark-application)
 * [Extending NiFi Flow to ingest data directly to Phoenix using PutSql processor](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#extending-nifi-flow-to-ingest-data-directly-to-phoenix-using-putsql-processor)
 * [References](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#references)
