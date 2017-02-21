@@ -204,11 +204,8 @@ Zeppelin UI: http://your-vm-ip:9995/
 
 ## Extending NiFi Flow to ingest data directly to Phoenix using PutSql processor
 
-1) Lets go ahead and kill the storm topology from command-line (or from Ambari Storm-View or Storm UI) 
+1) Lets go ahead and kill the Spark Application by pressing cntrl+c from command-line:
 
-```
-# storm kill NiFi-Storm-Phoenix
-```
 2) Log back to NiFi UI currently running the flow, and stop the entire flow.
 
 3) Drop a RouteOnAttribute processor to canvas for Matched relation from ExtractText processor and configure it with below property and auto terminate unmatched relation.
