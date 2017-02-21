@@ -41,7 +41,7 @@ lines.foreachRDD {rdd =>
       val bulletin_level1: String = bulletin_level(i)
       val event_date1: String = event_date(i)
       val event_type1: String = event_type(i)
-      sc.parallelize(Seq((uuid1, event_date1, bulletin_level1, event_type1, content1))).saveToPhoenix("NIFI_SPARK",Seq("UUID","EVENT_DATE","BULLETIN_LEVEL","EVENT_TYPE","CONTENT"),zkUrl = Some("localhost:2181:/hbase-unsecure"))
+      sc.parallelize(Seq((uuid1, event_date1, bulletin_level1, event_type1, content1))).saveToPhoenix("NIFI_LOG",Seq("UUID","EVENT_DATE","BULLETIN_LEVEL","EVENT_TYPE","CONTENT"),zkUrl = Some("localhost:2181:/hbase-unsecure"))
 
     }
  }
