@@ -197,7 +197,7 @@ SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_SPARK WHERE BULLETIN_LEVEL
 ```
 Zeppelin UI: http://your-vm-ip:9995/
 ```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/Zeppelin.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Zeppelin.jpg)
 
 9) No you can Change the code as needed, re-built the jar and re-submit the topologies.
 
@@ -215,7 +215,7 @@ ERROR  : ${BULLETIN_LEVEL:equals('ERROR')}
 INFO   : ${BULLETIN_LEVEL:equals('INFO')}	
 WARN   : ${BULLETIN_LEVEL:equals('WARN')}
 ```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/RouteOnAttribute.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/RouteOnAttribute.jpg)
 
 4) Drop an AttributesToJSON processor to canvas with below configuration and connect RouteOnAttribute's DEBUG,ERROR,INFO,DEBUG relations to it.
 
@@ -223,7 +223,7 @@ WARN   : ${BULLETIN_LEVEL:equals('WARN')}
 Attributes List : uuid,EVENT_DATE,BULLETIN_LEVEL,EVENT_TYPE,CONTENT
 Destination : flowfile-content
 ```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/AttributesToJSON.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/AttributesToJSON.jpg)
 
 5) Create and enable DBCPConnectionPool with name "Phoenix-Storm" with below configuration:
 
@@ -232,23 +232,23 @@ Database Connection URL : jdbc:phoenix:sandbox.hortonworks.com:2181:/hbase-unsec
 Database Driver Class Name : org.apache.phoenix.jdbc.PhoenixDriver
 Database Driver Location(s) : /usr/hdp/current/phoenix-client/phoenix-client.jar	
 ```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/Phoenix-Storm.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Phoenix-Spark.jpg)
 
 6) Drop a ConvertJSONToSQL to canvas with below configuration, connect AttributesToJSON's success relation to it, auto terminate Failure relation for now after connecting to Phoenix-Storm DB Controller service.
 
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/ConvertJSONToSQL.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/ConvertJSONToSQL.jpg)
 
 7) Drop a ReplaceText processor canvas to update INSERT statements to UPSERT for Phoenix with below configuration, connect sql relation of ConvertJSONToSQL auto terminate original and Failure relation.
 
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/ReplaceText.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/ReplaceText.jpg)
 
 8) Finally add a PutSQL processor with below configurations and connect it to ReplaceText's success relation and auto terminate all of its relations.
 
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/PutSQL.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/PutSQL.jpg)
 
 9) The final flow including both ingestion via Storm and direct to phoenix using PutSql is complete, it should look similar to below:
 
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/Final_Flow.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Final_Flow.jpg)
 
 10) Now go ahead and start the flow to ingest data to both Tables via storm and directly from NiFi.
 
@@ -257,7 +257,7 @@ Database Driver Location(s) : /usr/hdp/current/phoenix-client/phoenix-client.jar
 %jdbc(phoenix)
 SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_DIRECT WHERE BULLETIN_LEVEL='INFO' ORDER BY EVENT_DATE
 ```
-![alt tag](https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/images/Zeppelin_Final.jpg)
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Zeppelin_Final.jpg)
 
 * Too Lazy to create flow??? download my flow template [here] ( https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/templates/Storm_NiFi_Phoenix.xml)
 
