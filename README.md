@@ -9,9 +9,10 @@
 * [Introduction](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#introduction)
 * [Prerequisites](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#prerequisites)
 * [Configuring and Creating Table in Hbase via Phoenix](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#configuring-and-creating-table-in-hbase-via-phoenix)
+* [Configuring and Restarting Spark](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#configuring-and-restarting-spark)
 * [Configuring and Starting NiFi](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#configuring-and-starting-nifi)
 * [Building a Flow in NiFi to fetch and parse nifi-app.log](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming##building-a-flow-in-nifi-to-fetch-and-parse-nifi-applog)
-* [Building Storm application jar with maven](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#building-storm-application-jar-with-maven)
+* [Building Spark application](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#building-spark-application)
 * [Extending NiFi Flow to ingest data directly to Phoenix using PutSql processor](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#extending-nifi-flow-to-ingest-data-directly-to-phoenix-using-putsql-processor)
 * [References](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming#references)
 
@@ -259,14 +260,14 @@ SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_DIRECT WHERE BULLETIN_LEVE
 ```
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Zeppelin_Final.jpg)
 
-* Too Lazy to create flow??? download my flow template [here] ( https://github.com/jobinthompu/NiFi-Storm-Integration/blob/master/resources/templates/Storm_NiFi_Phoenix.xml)
+* Too Lazy to create flow??? download my flow template [here] (https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/templates/Spark_NiFi_Phoenix.xml)
 
 #### This completes the tutorial,  You have successfully:
 
 * Installed and Configured HDF 2.0 on your HDP-2.5 Sandbox.
 * Created a Data flow to pull logs and then to Parse it and make it available on a Site-to-site enabled NiFi port.
-* Created a Storm topology to consume data from NiFi via Site-to-Site and Ingest it to Hbase via Phoenix.
-* (Directly Ingested Data to Phoenix with PutSQL Processor in NiFi with out using Storm)
+* Created a Spark Application to consume data from NiFi via Site-to-Site and Ingest it to Hbase via Phoenix.
+* (Directly Ingested Data to Phoenix with PutSQL Processor in NiFi with out using Spark)
 * Viewed the Ingested data from Phoenix command line and Zeppelin
 
 
