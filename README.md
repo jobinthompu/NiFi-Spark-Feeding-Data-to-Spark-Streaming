@@ -163,11 +163,16 @@ http://your-vm-ip:9090/nifi/
 
 ```
 
-3) Now let us go ahead and submit the Spark Application via spark-shell
+3) Now let us go ahead and submit the Spark Application to YARN or can run locally via spark-shell
 
 ```
 # spark-shell --master yarn --deploy-mode client -i /opt/NiFi-Spark-Feeding-Data-to-Spark-Streaming/src/main/Spark+NiFi+Phoenix.sh
+
+OR 
+
+# spark-shell -i /opt/NiFi-Spark-Feeding-Data-to-Spark-Streaming/src/main/Spark+NiFi+Phoenix.sh
 ```
+
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Spark-Shell.jpg)
 
 4) Make sure the application is submitted and it prints out statistics. 
@@ -179,6 +184,13 @@ YARN UI: http://your-vm-ip:8088
 ```
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/YARN-UI.jpg)
 
+Or if you Submit the application locally you can verify that by accessing spark shell application UI:
+
+```
+http://sandbox.hortonworks.com:4040/executors/
+```
+![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/Spark-UI.jpg)
+
 6) Lets Go back to the NiFi Web UI, if everything worked fine, the data which was pending on the port 'spark' will be gone as it was consumed by Spark.
 
 7) Now Lets Connect to Phoenix and check out the data populated in tables, you can either use Phoenix sqlline command line or Zeppelin 
@@ -188,7 +200,7 @@ YARN UI: http://your-vm-ip:8088
 ```
 # /usr/hdp/current/phoenix-client/bin/sqlline.py localhost:2181:/hbase-unsecure 
 
-SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_SPARK WHERE BULLETIN_LEVEL='INFO' ORDER BY EVENT_DATE LIMIT 20;
+SELECT EVENT_DATE,EVENT_TYPE,BULLETIN_LEVEL FROM NIFI_LOG WHERE BULLETIN_LEVEL='INFO' ORDER BY EVENT_DATE LIMIT 20;
 ```
 
 ![alt tag](https://github.com/jobinthompu/NiFi-Spark-Feeding-Data-to-Spark-Streaming/blob/master/resources/images/sqlline.jpg)
